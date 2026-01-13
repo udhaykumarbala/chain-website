@@ -1,0 +1,250 @@
+/* =====================================================
+   0G Storage - Navigation Bar
+   ===================================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    z-index: var(--z-fixed);
+    transition: var(--transition-normal);
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(254, 254, 254, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-bottom: 1px solid transparent;
+    transition: var(--transition-normal);
+}
+
+.navbar.scrolled::before {
+    background: rgba(254, 254, 254, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom-color: var(--border-light);
+}
+
+.nav-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+/* Logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-primary);
+    font-weight: var(--font-bold);
+    font-size: var(--text-lg);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.nav-logo:hover {
+    color: var(--color-purple-900);
+}
+
+.nav-logo .logo-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.nav-logo .logo-text {
+    letter-spacing: var(--tracking-tight);
+}
+
+.nav-logo .logo-img {
+    height: 6rem;
+    width: auto;
+    display: block;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.nav-link {
+    position: relative;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    padding: var(--space-2) 0;
+    transition: var(--transition-fast);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Navigation Actions */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+/* Navbar Launch App Button - Black filled pill */
+.nav-actions .btn-primary {
+    background: var(--color-black);
+    color: var(--text-inverse);
+    border: none;
+    border-radius: var(--radius-full);
+    padding: var(--space-3) var(--space-6);
+    font-weight: var(--font-semibold);
+}
+
+.nav-actions .btn-primary:hover {
+    background: var(--color-gray-800);
+    color: var(--text-inverse);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: var(--text-xl);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.nav-toggle:hover {
+    color: var(--color-purple-900);
+}
+
+/* Products Navigation */
+.nav-products {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin-left: var(--space-4);
+    padding-left: var(--space-4);
+    border-left: 1px solid var(--border-light);
+}
+
+.nav-product-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-lg);
+    color: var(--text-secondary);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.nav-product-link:hover {
+    background: var(--color-gray-100);
+    color: var(--text-primary);
+}
+
+.nav-product-link.active {
+    background: var(--gradient-subtle);
+    color: var(--color-purple-900);
+}
+
+.nav-product-link img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--bg-primary);
+        border-bottom: 1px solid var(--border-light);
+        padding: var(--space-4) 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-normal);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: var(--space-4) var(--space-6);
+        text-align: left;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-actions .btn {
+        display: none;
+    }
+
+    .nav-products {
+        width: 100%;
+        justify-content: center;
+        margin: var(--space-2) 0 0 0;
+        padding: var(--space-3) var(--space-6) 0;
+        border-left: none;
+        border-top: 1px solid var(--border-light);
+    }
+
+    .nav-product-link {
+        flex-direction: column;
+        gap: var(--space-1);
+        padding: var(--space-2);
+    }
+}

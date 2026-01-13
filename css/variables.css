@@ -1,0 +1,251 @@
+/* =====================================================
+   0G Storage - CSS Variables & Design Tokens
+   ===================================================== */
+
+/* ==================== Font Face Definitions ==================== */
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('../assets/fonts/GeistMono-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Regola Pro';
+    src: url('../assets/fonts/regola/Regola Pro Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Regola Pro';
+    src: url('../assets/fonts/regola/Regola Pro Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Regola Pro';
+    src: url('../assets/fonts/regola/Regola Pro Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Regola Pro';
+    src: url('../assets/fonts/regola/Regola Pro Book.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* ==================== Colors ==================== */
+
+    /* Primary Purple Palette */
+    --color-purple-900: #9200E1;
+    --color-purple-700: #A733E8;
+    --color-purple-500: #B75FFF;
+    --color-purple-400: #CB8AFF;
+    --color-purple-300: #D5A3FF;
+    --color-purple-200: #E3C1FF;
+    --color-purple-100: #F3E5FF;
+    --color-purple-50: #FAF5FF;
+
+    /* Orange/Coral Accent (for primary buttons) */
+    --color-orange-500: #FF6B4A;
+    --color-orange-600: #E85A3A;
+    --color-orange-700: #D14A2A;
+
+    /* Base Colors */
+    --color-black: #000000;
+    --color-white: #FEFEFE;
+    --color-gray-900: #111111;
+    --color-gray-800: #1A1A1A;
+    --color-gray-700: #333333;
+    --color-gray-600: #4D4D4D;
+    --color-gray-500: #666666;
+    --color-gray-400: #999999;
+    --color-gray-300: #CCCCCC;
+    --color-gray-200: #E5E5E5;
+    --color-gray-100: #F5F5F5;
+    --color-gray-50: #FAFAFA;
+
+    /* Semantic Colors */
+    --color-success: #22C55E;
+    --color-success-light: #DCFCE7;
+    --color-error: #EF4444;
+    --color-error-light: #FEE2E2;
+    --color-warning: #F59E0B;
+    --color-warning-light: #FEF3C7;
+    --color-info: #3B82F6;
+    --color-info-light: #DBEAFE;
+
+    /* ==================== Backgrounds ==================== */
+    --bg-primary: var(--color-white);
+    --bg-secondary: #F8F6FA;
+    --bg-tertiary: var(--color-gray-100);
+    --bg-card: var(--color-white);
+    --bg-card-hover: var(--color-gray-50);
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+
+    /* ==================== Text Colors ==================== */
+    --text-primary: var(--color-black);
+    --text-secondary: var(--color-gray-600);
+    --text-tertiary: var(--color-gray-500);
+    --text-muted: var(--color-gray-400);
+    --text-inverse: var(--color-white);
+    --text-accent: var(--color-purple-900);
+
+    /* ==================== Border Colors ==================== */
+    --border-light: var(--color-gray-200);
+    --border-default: var(--color-gray-300);
+    --border-focus: var(--color-purple-500);
+    --border-error: var(--color-error);
+
+    /* ==================== Gradients ==================== */
+    --gradient-primary: linear-gradient(135deg, var(--color-purple-500) 0%, var(--color-purple-900) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--color-purple-300) 0%, var(--color-purple-500) 100%);
+    --gradient-subtle: linear-gradient(135deg, var(--color-purple-100) 0%, var(--color-purple-50) 100%);
+    --gradient-text: linear-gradient(135deg, var(--color-purple-900) 0%, var(--color-purple-500) 50%, var(--color-purple-700) 100%);
+
+    /* Background Gradients */
+    --gradient-hero: radial-gradient(ellipse at 30% 20%, rgba(183, 95, 255, 0.08) 0%, transparent 50%),
+                     radial-gradient(ellipse at 70% 80%, rgba(146, 0, 225, 0.06) 0%, transparent 50%);
+    --gradient-section: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+
+    /* ==================== Typography ==================== */
+    --font-primary: 'Regola Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    --font-heading: 'Geist Mono', 'JetBrains Mono', 'Fira Code', monospace;
+    --font-mono: 'Geist Mono', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+    /* Font Sizes */
+    --text-xs: 0.75rem;      /* 12px */
+    --text-sm: 0.875rem;     /* 14px */
+    --text-base: 1rem;       /* 16px */
+    --text-lg: 1.125rem;     /* 18px */
+    --text-xl: 1.25rem;      /* 20px */
+    --text-2xl: 1.5rem;      /* 24px */
+    --text-3xl: 1.875rem;    /* 30px */
+    --text-4xl: 2.25rem;     /* 36px */
+    --text-5xl: 3rem;        /* 48px */
+    --text-6xl: 3.75rem;     /* 60px */
+
+    /* Font Weights */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* Line Heights */
+    --leading-none: 1;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
+
+    /* Letter Spacing */
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+
+    /* ==================== Spacing ==================== */
+    --space-0: 0;
+    --space-1: 0.25rem;      /* 4px */
+    --space-2: 0.5rem;       /* 8px */
+    --space-3: 0.75rem;      /* 12px */
+    --space-4: 1rem;         /* 16px */
+    --space-5: 1.25rem;      /* 20px */
+    --space-6: 1.5rem;       /* 24px */
+    --space-8: 2rem;         /* 32px */
+    --space-10: 2.5rem;      /* 40px */
+    --space-12: 3rem;        /* 48px */
+    --space-16: 4rem;        /* 64px */
+    --space-20: 5rem;        /* 80px */
+    --space-24: 6rem;        /* 96px */
+    --space-32: 8rem;        /* 128px */
+
+    /* ==================== Layout ==================== */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1440px;
+
+    --nav-height: 72px;
+    --section-padding: var(--space-24);
+    --section-padding-mobile: var(--space-16);
+
+    /* ==================== Borders ==================== */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+
+    --border-width: 1px;
+    --border-width-2: 2px;
+
+    /* ==================== Shadows ==================== */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+
+    /* Purple Glow Shadows */
+    --shadow-glow-sm: 0 0 20px rgba(146, 0, 225, 0.15);
+    --shadow-glow-md: 0 0 40px rgba(146, 0, 225, 0.2);
+    --shadow-glow-lg: 0 0 60px rgba(146, 0, 225, 0.25);
+    --shadow-glow-xl: 0 8px 32px rgba(146, 0, 225, 0.3);
+
+    /* Card Shadows */
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.08);
+
+    /* ==================== Transitions ==================== */
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    --duration-slower: 700ms;
+
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    /* Default Transition */
+    --transition-fast: all var(--duration-fast) var(--ease-out);
+    --transition-normal: all var(--duration-normal) var(--ease-out);
+    --transition-slow: all var(--duration-slow) var(--ease-out);
+
+    /* ==================== Z-Index Scale ==================== */
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal-backdrop: 400;
+    --z-modal: 500;
+    --z-popover: 600;
+    --z-tooltip: 700;
+}
+
+/* ==================== Dark Mode Variables (Optional) ==================== */
+@media (prefers-color-scheme: dark) {
+    :root.auto-dark {
+        --bg-primary: var(--color-gray-900);
+        --bg-secondary: var(--color-gray-800);
+        --text-primary: var(--color-white);
+        --text-secondary: var(--color-gray-400);
+    }
+}

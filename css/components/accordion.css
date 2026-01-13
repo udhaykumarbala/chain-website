@@ -1,0 +1,118 @@
+/* =====================================================
+   0G Storage - FAQ Accordion
+   ===================================================== */
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-4);
+    overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-item:hover {
+    border-color: var(--color-purple-300);
+}
+
+.faq-item.active {
+    border-color: var(--color-purple-500);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--gradient-primary);
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    width: 100%;
+    padding: var(--space-6);
+    background: none;
+    border: none;
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    text-align: left;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.faq-question:hover {
+    color: var(--color-purple-900);
+}
+
+.faq-question span {
+    flex: 1;
+}
+
+.faq-question i {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    transition: var(--transition-normal);
+}
+
+.faq-item.active .faq-question i {
+    background: var(--gradient-primary);
+    color: var(--text-inverse);
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--duration-normal) var(--ease-out),
+                padding var(--duration-normal) var(--ease-out);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+
+.faq-answer p {
+    padding: 0 var(--space-6) var(--space-6);
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 640px) {
+    .faq-question {
+        padding: var(--space-4);
+        font-size: var(--text-sm);
+    }
+
+    .faq-answer p {
+        padding: 0 var(--space-4) var(--space-4);
+        font-size: var(--text-sm);
+    }
+}

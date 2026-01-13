@@ -1,0 +1,331 @@
+/* =====================================================
+   0G Storage - Hero Section (Redesigned)
+   ===================================================== */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--nav-height);
+    overflow: hidden;
+    z-index: 1;
+    background-color: var(--bg-primary);
+}
+
+/* ==================== Grid Background Pattern ==================== */
+.hero-dotted-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 1;
+}
+
+/* ==================== Hero Content Grid ==================== */
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    max-width: var(--container-xl);
+    padding: var(--space-16) var(--space-6);
+}
+
+/* ==================== Hero Text ==================== */
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-6);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+}
+
+.hero-title .gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-10);
+    max-width: 480px;
+}
+
+/* ==================== Hero CTA Buttons ==================== */
+.hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+/* Primary Hero Button - Black filled with rounded corners */
+.btn-hero-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-8);
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-inverse);
+    background: var(--color-black);
+    border: 2px solid var(--color-black);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-hero-primary:hover {
+    background: var(--color-gray-800);
+    border-color: var(--color-gray-800);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: var(--text-inverse);
+}
+
+/* Secondary Hero Button - Black outlined with rounded corners */
+.btn-hero-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-8);
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    background: transparent;
+    border: 2px solid var(--color-black);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-hero-secondary:hover {
+    background: var(--color-black);
+    color: var(--text-inverse);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Large button size */
+.btn-lg {
+    padding: var(--space-4) var(--space-10);
+    font-size: var(--text-lg);
+}
+
+/* ==================== Hero Visual / Illustration ==================== */
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-illustration {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 964 / 899;
+}
+
+.storage-illustration {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Animation for layers */
+.storage-illustration g {
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+/* Subtle floating animation for illustration layers */
+@keyframes float-layer {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.layer-three,
+.layer-four,
+.layer-five {
+    animation: float-layer 6s ease-in-out infinite;
+}
+
+.layer-three {
+    animation-delay: 0s;
+}
+
+.layer-four {
+    animation-delay: 0.5s;
+}
+
+.layer-five {
+    animation-delay: 1s;
+}
+
+.layer-seven,
+.layer-eight {
+    animation: float-layer 5s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+/* ==================== Animations ==================== */
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fade-up 0.8s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fade-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 1200px) {
+    .hero-content {
+        gap: var(--space-8);
+    }
+
+    .hero-illustration {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-12);
+    }
+
+    .hero-text {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .hero-subtitle {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-ctas {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .hero-illustration {
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: calc(var(--nav-height) + var(--space-8)) 0 var(--space-12);
+    }
+
+    .hero-content {
+        padding: var(--space-8) var(--space-4);
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: var(--text-base);
+    }
+
+    .hero-illustration {
+        max-width: 350px;
+    }
+
+    .hero-dotted-bg {
+        background-size: 20px 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .hero-ctas .btn-hero-primary,
+    .hero-ctas .btn-hero-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-illustration {
+        max-width: 280px;
+    }
+
+    .btn-lg {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--text-base);
+    }
+}
+
+/* ==================== Reduced Motion ==================== */
+@media (prefers-reduced-motion: reduce) {
+    .animate-fade-up {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .layer-three,
+    .layer-four,
+    .layer-five,
+    .layer-seven,
+    .layer-eight {
+        animation: none;
+    }
+}

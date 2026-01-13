@@ -1,0 +1,269 @@
+/* =====================================================
+   0G Storage - Responsive Utilities
+   ===================================================== */
+
+/* ==================== Container Adjustments ==================== */
+@media (max-width: 1280px) {
+    .container {
+        max-width: var(--container-lg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: var(--container-md);
+    }
+
+    .section {
+        padding: var(--space-20) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-12);
+    }
+
+    h1 {
+        font-size: var(--text-4xl);
+    }
+
+    h2 {
+        font-size: var(--text-3xl);
+    }
+
+    h3 {
+        font-size: var(--text-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-4);
+    }
+
+    .section {
+        padding: var(--section-padding-mobile) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-10);
+    }
+
+    h1 {
+        font-size: var(--text-3xl);
+    }
+
+    h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .section-subtitle {
+        font-size: var(--text-base);
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --section-padding-mobile: var(--space-12);
+    }
+
+    .container {
+        padding: 0 var(--space-4);
+    }
+}
+
+/* ==================== Display Utilities ==================== */
+.hide-mobile {
+    display: block;
+}
+
+.show-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .show-mobile {
+        display: block !important;
+    }
+}
+
+/* ==================== Text Alignment ==================== */
+@media (max-width: 768px) {
+    .text-center-mobile {
+        text-align: center;
+    }
+
+    .text-left-mobile {
+        text-align: left;
+    }
+}
+
+/* ==================== Flex Utilities ==================== */
+.flex-col-mobile {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .flex-col-mobile {
+        flex-direction: column;
+    }
+}
+
+/* ==================== Spacing Overrides ==================== */
+@media (max-width: 768px) {
+    .gap-mobile-sm {
+        gap: var(--space-4);
+    }
+
+    .mb-mobile-sm {
+        margin-bottom: var(--space-4);
+    }
+
+    .p-mobile-sm {
+        padding: var(--space-4);
+    }
+}
+
+/* ==================== Grid Utilities ==================== */
+.grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+/* ==================== Touch Optimizations ==================== */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase tap targets */
+    .btn {
+        min-height: 48px;
+        padding: var(--space-4) var(--space-6);
+    }
+
+    .nav-link {
+        padding: var(--space-3) var(--space-2);
+    }
+
+    /* Remove hover effects on touch devices */
+    .capability-row:hover,
+    .security-card:hover,
+    .architecture-card:hover,
+    .cta-card:hover,
+    .metric-card:hover {
+        transform: none;
+    }
+
+    .capability-row:hover .capability-icon {
+        transform: none;
+        background: var(--gradient-subtle);
+        color: var(--color-purple-900);
+    }
+
+    /* Active states instead */
+    .btn:active {
+        transform: scale(0.98);
+    }
+
+    .card:active,
+    .security-card:active,
+    .cta-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* ==================== Safe Area Insets (Notch) ==================== */
+@supports (padding: max(0px)) {
+    .navbar {
+        padding-left: max(var(--space-6), env(safe-area-inset-left));
+        padding-right: max(var(--space-6), env(safe-area-inset-right));
+    }
+
+    .footer {
+        padding-bottom: max(var(--space-8), env(safe-area-inset-bottom));
+    }
+}
+
+/* ==================== Print Styles ==================== */
+@media print {
+    .navbar,
+    .hero-visual,
+    .hero-scroll-indicator,
+    .partners-marquee,
+    .metric-chart,
+    .footer-social {
+        display: none !important;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: var(--space-8) 0;
+    }
+
+    .section {
+        padding: var(--space-8) 0;
+        break-inside: avoid;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+        background: #fff;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .btn {
+        border: 1px solid #000;
+        background: none;
+        color: #000;
+    }
+}
+
+/* ==================== High Contrast Mode ==================== */
+@media (prefers-contrast: high) {
+    :root {
+        --border-light: var(--color-gray-400);
+        --text-secondary: var(--color-gray-700);
+        --text-muted: var(--color-gray-600);
+    }
+
+    .btn-primary {
+        background: var(--color-purple-900);
+        border: 2px solid var(--color-black);
+    }
+
+    .card,
+    .metric-card,
+    .security-card,
+    .architecture-card,
+    .cta-card,
+    .faq-item {
+        border-width: 2px;
+    }
+}
+
+/* ==================== Landscape Phone ==================== */
+@media (max-width: 896px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: calc(var(--nav-height) + var(--space-8)) 0 var(--space-8);
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-visual {
+        order: 0;
+    }
+
+    .node-network {
+        width: 200px;
+        height: 200px;
+    }
+}
