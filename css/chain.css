@@ -443,3 +443,146 @@
         flex-direction: row;
     }
 }
+
+/* =====================================================
+   Network Details Section
+   ===================================================== */
+.network-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-8);
+}
+
+.network-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.network-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.network-card-header h3 {
+    font-size: var(--text-xl);
+    margin: 0;
+}
+
+.network-details {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.network-details > div {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: var(--space-3);
+    align-items: center;
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.network-details > div:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.network-details dt {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    font-weight: var(--font-medium);
+}
+
+.network-details dd {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-width: 0;
+    font-size: var(--text-sm);
+}
+
+.network-details code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--bg-tertiary);
+    padding: 0.15em 0.5em;
+    border-radius: var(--radius-sm);
+    overflow-wrap: anywhere;
+}
+
+.network-details a {
+    color: var(--text-accent);
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+}
+
+.copy-btn {
+    flex: 0 0 auto;
+    background: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.copy-btn:hover {
+    border-color: var(--color-purple-300);
+    color: var(--text-primary);
+}
+
+.network-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: auto;
+}
+
+.network-note {
+    min-height: 1.4em;
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--color-success);
+}
+
+.network-note.error {
+    color: var(--color-error);
+}
+
+.economics-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.section-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+}
+
+@media (max-width: 900px) {
+    .network-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .network-details > div {
+        grid-template-columns: 80px minmax(0, 1fr);
+    }
+}
