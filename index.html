@@ -52,13 +52,14 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="https://0gstorage.ai" class="nav-logo">
+            <a href="./" class="nav-logo">
                 <img src="assets/images/Chain.png" alt="0G Chain" class="logo-img" />
             </a>
 
             <div class="nav-links" id="navLinks">
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#architecture" class="nav-link">Architecture</a>
+                <a href="#network" class="nav-link">Network</a>
                 <a href="#analytics" class="nav-link">Analytics</a>
                 <a href="https://docs.0g.ai/concepts/chain" class="nav-link" target="_blank">Docs</a>
             </div>
@@ -102,6 +103,66 @@
             <div class="hero-visual animate-fade-up delay-3">
                 <div class="hero-illustration">
                     <img src="assets/images/Illustration.png" alt="0G Chain - AI-First Blockchain" class="storage-illustration" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Network Details Section -->
+    <section class="section" id="network">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Connect to 0G Chain</h2>
+                <p class="section-subtitle">Everything you need to point a wallet, RPC client, or deployment tool at the network.</p>
+            </div>
+
+            <div class="network-grid animate-on-scroll">
+                <div class="network-card">
+                    <div class="network-card-header">
+                        <h3>0G Mainnet</h3>
+                        <span class="status-badge badge-live">Aristotle</span>
+                    </div>
+                    <dl class="network-details">
+                        <div><dt>Chain ID</dt><dd><code>16661</code></dd></div>
+                        <div><dt>RPC URL</dt><dd><code>https://evmrpc.0g.ai</code><button class="copy-btn" type="button" data-copy="https://evmrpc.0g.ai" aria-label="Copy RPC URL"><i class="fa-regular fa-copy"></i></button></dd></div>
+                        <div><dt>Currency</dt><dd><code>0G</code></dd></div>
+                        <div><dt>Explorer</dt><dd><a href="https://chainscan.0g.ai" target="_blank">chainscan.0g.ai</a></dd></div>
+                        <div><dt>Staking</dt><dd><a href="https://nodes.0g.ai/mainnet/validators" target="_blank">nodes.0g.ai</a></dd></div>
+                    </dl>
+                    <div class="network-actions">
+                        <button class="btn btn-primary add-network-btn" type="button" data-network="mainnet">
+                            <i class="fa-solid fa-wallet"></i>
+                            Add to Wallet
+                        </button>
+                        <a href="https://docs.0g.ai/developer-hub/mainnet/mainnet-overview" class="btn btn-secondary" target="_blank">
+                            Mainnet Docs
+                        </a>
+                    </div>
+                    <p class="network-note" data-note="mainnet"></p>
+                </div>
+
+                <div class="network-card">
+                    <div class="network-card-header">
+                        <h3>0G Testnet</h3>
+                        <span class="status-badge badge-coming">Galileo</span>
+                    </div>
+                    <dl class="network-details">
+                        <div><dt>Chain ID</dt><dd><code>16602</code></dd></div>
+                        <div><dt>RPC URL</dt><dd><code>https://evmrpc-testnet.0g.ai</code><button class="copy-btn" type="button" data-copy="https://evmrpc-testnet.0g.ai" aria-label="Copy RPC URL"><i class="fa-regular fa-copy"></i></button></dd></div>
+                        <div><dt>Currency</dt><dd><code>0G</code></dd></div>
+                        <div><dt>Explorer</dt><dd><a href="https://chainscan-galileo.0g.ai" target="_blank">chainscan-galileo.0g.ai</a></dd></div>
+                        <div><dt>Faucet</dt><dd><a href="https://faucet.0g.ai" target="_blank">faucet.0g.ai</a></dd></div>
+                    </dl>
+                    <div class="network-actions">
+                        <button class="btn btn-primary add-network-btn" type="button" data-network="testnet">
+                            <i class="fa-solid fa-wallet"></i>
+                            Add to Wallet
+                        </button>
+                        <a href="https://docs.0g.ai/developer-hub/testnet/testnet-overview" class="btn btn-secondary" target="_blank">
+                            Testnet Docs
+                        </a>
+                    </div>
+                    <p class="network-note" data-note="testnet"></p>
                 </div>
             </div>
         </div>
@@ -341,21 +402,21 @@
                         </div>
                     </div>
                     <p class="architecture-desc">
-                        A high-performance EVM implementation that processes smart contracts with optimized state management and parallel transaction execution.
+                        A high-performance EVM execution layer running on reth or geth, with Pectra and Cancun-Deneb support so your existing Ethereum tooling works unchanged.
                     </p>
                     <ul class="architecture-features">
                         <li>
                             <i class="fa-solid fa-gears"></i>
                             <div>
-                                <strong>Parallel Execution</strong>
-                                <span>Process independent transactions simultaneously for higher throughput.</span>
+                                <strong>Latest EVM Upgrades</strong>
+                                <span>Pectra and Cancun-Deneb supported. Compile with evm_version cancun and deploy as you would on Ethereum.</span>
                             </div>
                         </li>
                         <li>
                             <i class="fa-solid fa-database"></i>
                             <div>
-                                <strong>Optimized State</strong>
-                                <span>Efficient state storage and retrieval for fast contract interactions.</span>
+                                <strong>reth Execution Client</strong>
+                                <span>Rust-based reth is the recommended client, with faster sync and an efficient MDBX database. geth remains fully supported.</span>
                             </div>
                         </li>
                     </ul>
@@ -437,7 +498,7 @@
                         <i class="fa-solid fa-coins"></i>
                     </div>
                     <h4>Economic Security at Scale</h4>
-                    <p>$X00M+ staked tokens secure the network. Validators face slashing for any malicious behavior.</p>
+                    <p>Validators and their delegators put 0G tokens at stake, and slashing penalises malicious behavior or extended downtime on-chain.</p>
                 </div>
             </div>
         </div>
@@ -512,12 +573,18 @@
                 <div class="economics-text">
                     <h2 class="section-title">Stake & Secure the Network</h2>
                     <p class="text-lg text-muted">
-                        Become a validator and earn rewards for securing the 0G Chain. Stake tokens to participate in consensus and help power the AI-first blockchain.
+                        Delegate 0G to a validator and earn rewards without running infrastructure, or run a validator node yourself and take part in consensus. Both secure the network.
                     </p>
-                    <a href="https://docs.0g.ai/run-a-node/validator-node" class="btn btn-primary btn-lg" target="_blank">
-                        <i class="fa-solid fa-coins"></i>
-                        Learn About Validator Economics
-                    </a>
+                    <div class="economics-actions">
+                        <a href="https://nodes.0g.ai/mainnet/validators" class="btn btn-primary btn-lg" target="_blank">
+                            <i class="fa-solid fa-coins"></i>
+                            Stake 0G
+                        </a>
+                        <a href="https://docs.0g.ai/run-a-node/validator-node" class="btn btn-secondary btn-lg" target="_blank">
+                            <i class="fa-solid fa-server"></i>
+                            Run a Validator
+                        </a>
+                    </div>
                 </div>
                 <div class="economics-visual">
                     <div class="node-reward-flow">
@@ -530,7 +597,7 @@
                         </div>
                         <div class="reward-node">
                             <i class="fa-solid fa-server"></i>
-                            <span>Run Validator</span>
+                            <span>Delegate or Validate</span>
                         </div>
                         <div class="reward-arrow">
                             <i class="fa-solid fa-arrow-right"></i>
@@ -569,7 +636,7 @@
                         <i class="fa-solid fa-plus"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Validators stake 0G tokens to participate in block production and consensus. Rewards are distributed proportionally to stake size. Validators risk slashing if they behave maliciously or go offline, ensuring network security through economic incentives.</p>
+                        <p>Validators stake 0G tokens to take part in block production and consensus, and token holders can delegate to a validator at <a href="https://nodes.0g.ai/mainnet/validators" target="_blank">nodes.0g.ai</a> to earn a share of its rewards without running infrastructure. Rewards flow through a community tax, then validator commission, then proportionally to delegators. Validators also participate in Symbiotic restaking on Ethereum, and both validators and delegators face slashing for malicious behavior or extended downtime.</p>
                     </div>
                 </div>
 
@@ -631,8 +698,8 @@
                     <div class="cta-icon">
                         <i class="fa-solid fa-server"></i>
                     </div>
-                    <h3>Validators</h3>
-                    <p>Run a validator node and earn staking rewards.</p>
+                    <h3>Validators &amp; Stakers</h3>
+                    <p>Run a validator node, or delegate 0G to one and earn rewards.</p>
                     <a href="https://docs.0g.ai/run-a-node/validator-node" class="btn btn-primary" target="_blank">
                         <i class="fa-solid fa-arrow-right"></i>
                         Run a Validator
@@ -650,6 +717,17 @@
                         View Explorer
                     </a>
                 </div>
+            </div>
+
+            <div class="section-cta animate-on-scroll">
+                <a href="https://hub.0g.ai" class="btn btn-primary btn-lg" target="_blank">
+                    <i class="fa-solid fa-compass"></i>
+                    Explore the Ecosystem
+                </a>
+                <a href="https://build.0g.ai" class="btn btn-secondary btn-lg" target="_blank">
+                    <i class="fa-solid fa-hammer"></i>
+                    Builder Hub
+                </a>
             </div>
         </div>
     </section>
@@ -671,13 +749,16 @@
                         <a href="https://storage.0g.ai">Storage</a>
                         <a href="https://chain.0g.ai">Chain</a>
                         <a href="https://compute.0g.ai">Compute</a>
-                        <a href="https://da.0g.ai">DA</a>
+                        <a href="https://pc.0g.ai" target="_blank">Private Computer</a>
                     </div>
                     <div class="footer-column">
                         <h4>Developers</h4>
-                        <a href="https://docs.0g.ai" target="_blank">Documentation</a>
-                        <a href="https://github.com/0gfoundation" target="_blank">GitHub</a>
+                        <a href="https://docs.0g.ai/developer-hub/mainnet/mainnet-overview" target="_blank">Documentation</a>
+                        <a href="https://build.0g.ai" target="_blank">Builder Hub</a>
+                        <a href="https://faucet.0g.ai" target="_blank">Faucet</a>
+                        <a href="https://nodes.0g.ai/mainnet/validators" target="_blank">Staking</a>
                         <a href="https://chainscan.0g.ai" target="_blank">Explorer</a>
+                        <a href="https://github.com/0gfoundation" target="_blank">GitHub</a>
                     </div>
                     <div class="footer-column">
                         <h4>Community</h4>
@@ -689,7 +770,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 0G Labs. All rights reserved.</p>
+                <p>&copy; 2026 Zero Gravity Labs Inc. All rights reserved.</p>
                 <div class="footer-social">
                     <a href="https://x.com/0G_labs" target="_blank" aria-label="X">
                         <i class="fa-brands fa-x-twitter"></i>
@@ -710,5 +791,6 @@
     <script src="js/animations.js"></script>
     <script src="js/chain-metrics.js"></script>
     <script src="js/accordion.js"></script>
+    <script src="js/network.js"></script>
 </body>
 </html>
